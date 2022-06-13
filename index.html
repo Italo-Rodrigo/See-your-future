@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seu Destino</title>
+    <script type="text/javascript" src="./scripts.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="images/favicon.svg" />
+  </head>
+
+  <body>
+    <main>
+      <img
+        class="ball"
+        src="images/ball.svg"
+        alt="Imagem de uma bola de cristal"
+      />
+      <h1>Vou revelar seu destino!</h1>
+      <p>
+        Clique em fazer perguntas para que seu destino seja revelado.
+      </p>
+      <form action="submit" onsubmit="fazerPergunta();return false;">
+        <input
+          id="perguntaFeita"
+          type="text"
+          placeholder="Digite sua pergunta"
+          title="Por favor digite sua pergunta"
+          name="suapergunta"
+        />
+        <button type="submit" id="buttonPerg">
+          Fazer Pergunta
+        </button>
+      </form>
+
+      <h3 id="resposta"></h3>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Ubuntu&display=swap");
+
+/* ~~> GLOBAL <~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+  --tColor: white;
+  --gradColor1: rgb(58, 0, 51);
+  --gradColor2: rgb(0, 17, 33);
+  --input-border: rgb(101, 0, 129);
+  --bt-bgcolor: rgb(101, 0, 129);
+  --bt-border: rgba(255, 255, 255, 0.1);
+  --bg-gradColor1: rgba(0, 0, 0, 0.2);
+  --bg-gradColor2: rgba(0, 0, 0, 0.02);
+  --bgShadow: rgba(0, 0, 0, 0.5);
+  --bgBorder: rgba(0, 0, 0, 0.3);
+}
+
+/* ~~> DOCUMENT <~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+body {
+  font-size: 1.6rem;
+  font-family: "Ubuntu", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--tColor);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-image: linear-gradient(
+    180deg,
+    var(--gradColor1),
+    var(--gradColor2)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ~~> CONTENT <~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+main {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  width: 48rem;
+  background-image: linear-gradient(
+    45deg,
+    var(--bg-gradColor1),
+    var(--bg-gradColor2)
+  );
+  padding: 5rem;
+  padding-top: 4rem;
+  border-radius: 1rem;
+  border: 1px solid var(--bgBorder);
+  box-shadow: 0px 0px 2rem var(--bgShadow);
+  text-align: center;
+}
+
+img.ball {
+  width: 15rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.5;
+}
+
+/* ~~> FORM <~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+form {
+  display: contents;
+}
+
+button,
+input {
+  background-color: var(--bt-bgcolor);
+  color: var(--tColor);
+  width: 94%;
+  height: 4rem;
+  border-radius: 0.6rem;
+  border: 2px solid var(--bt-border);
+  font-size: 1.6rem;
+}
+
+button {
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+button:hover {
+  filter: brightness(1.4);
+}
+
+input {
+  background-color: var(--tColor);
+  padding-left: 1rem;
+  color: var(--gradColor1);
+}
+
+input:focus {
+  outline: 2px solid var(--input-border);
+}
+
+/* ~~> ANSWERS <~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#resposta {
+  margin-top: 2rem;
+  transition: opacity 1s;
+}
+
+#resposta div {
+  font-size: 1.6rem;
+  font-weight: normal;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
