@@ -1,54 +1,54 @@
-const elementoResposta = document.querySelector("#resposta");
-const perguntaFeita = document.querySelector("#perguntaFeita");
-const buttonPerguntar = document.querySelector("#buttonPerg");
+const reply = document.querySelector("#reply");
+const myQuestion = document.querySelector("#myQuestion");
+const askButton = document.querySelector("#askButton");
 
-const listaRespostas = [
-  "Não.",
-  "Provavelmente.",
-  "Não conte com isso.",
-  "Minhas fontes dizem que sim.",
-  "Sinais apontam que sim.",
-  "Não é possivel prever agora.",
-  "Sem dúvidas!",
-  "Concentre-se e pergunte novamente...",
-  "Sim, com certeza!",
-  "Sinais apontam que não.",
-  "Não entendi sua pergunta.",
-  "Existem grandes chances.",
-  "Sim!",
-  "Pode contar com isso.",
-  "Existem chances mínimas.",
-  "Certamente que não.",
-  "Tudo indica que sim.",
-  "Melhor você nem saber.",
-  "As perspectivas não são tão boas.",
-  "A meu ver, sim.",
-  "De jeito nenhum!"
+const responseList = [
+  "No.",
+  "Probably.",
+  "Don't count on it!",
+  "My sources say yes.",
+  "All signs point to it.",
+  "Can't predict right now.",
+  "There’s no doubt!",
+  "Focus and ask again...",
+  "Yep, for sure!",
+  "Not that I know of.",
+  "I didn't get your question.",
+  "The odds are good.",
+  "Yes!",
+  "You may rely on it!",
+  "There are pretty slim chances.",
+  "Certainly not.",
+  "It is very likely.",
+  "It's better not to know.",
+  "Outlooks are not so good.",
+  "In my view, yes.",
+  "Not on your life!"
 ];
 
-function fazerPergunta() {
-  if (perguntaFeita.value === "") {
-    elementoResposta.style.opacity = 1;
-    elementoResposta.innerHTML = "Faça sua Pergunta...";
+function askQuestion() {
+  if (myQuestion.value === "") {
+    reply.style.opacity = 1;
+    reply.innerHTML = "Ask your question...";
   } else {
-    const pergunta = "<div>" + perguntaFeita.value + "</div>";
+    const question = "<div>" + myQuestion.value + "</div>";
 
-    const totalListaRespostas = listaRespostas.length;
-    const respostaAleatoria = Math.floor(Math.random() * totalListaRespostas);
+    const responseListLength = responseList.length;
+    const randomReply = Math.floor(Math.random() * responseListLength);
 
-    buttonPerguntar.setAttribute("disabled", true);
+    askButton.setAttribute("disabled", true);
 
-    elementoResposta.style.opacity = 1;
-    elementoResposta.innerHTML = pergunta + listaRespostas[respostaAleatoria];
+    reply.style.opacity = 1;
+    reply.innerHTML = question + responseList[randomReply];
   }
 
   setTimeout(function () {
-    elementoResposta.style.opacity = 0;
-    buttonPerguntar.removeAttribute("disabled");
-    perguntaFeita.value = "";
+    reply.style.opacity = 0;
+    askButton.removeAttribute("disabled");
+    myQuestion.value = "";
 
     setTimeout(function () {
-      elementoResposta.innerHTML = "";
+      reply.innerHTML = "";
     }, 1000);
   }, 3000);
 }
