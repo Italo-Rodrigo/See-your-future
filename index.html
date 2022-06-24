@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seu Destino</title>
+    <title>See your Future</title>
     <script type="text/javascript" src="./scripts.js" defer></script>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="shortcut icon" href="images/favicon.svg" />
@@ -12,31 +12,25 @@
 
   <body>
     <main>
-      <img
-        class="ball"
-        src="images/ball.svg"
-        alt="Imagem de uma bola de cristal"
-      />
+      <img class="ball" src="images/ball.svg" alt="Image of a crystal ball" />
       <header>
-        <h1>Vou revelar seu destino!</h1>
-        <p>
-          Clique em fazer perguntas para que seu destino seja revelado.
-        </p>
+        <h1>I will show your future!</h1>
+        <p>Click on <span>Ask a question</span> so your fate is revealed.</p>
       </header>
-      <form action="submit" onsubmit="fazerPergunta();return false;">
+      <form action="." onsubmit="askQuestion();return false;">
         <input
-          id="perguntaFeita"
+          id="myQuestion"
           type="text"
-          placeholder="Digite sua pergunta"
-          title="Por favor digite sua pergunta"
-          name="suapergunta"
+          placeholder="Type your question here"
+          title="Type your question here"
+          name="myQuestion"
         />
-        <button type="submit" id="buttonPerg">
-          Fazer Pergunta
+        <button type="submit" id="askButton">
+          Ask a question
         </button>
       </form>
 
-      <h3 id="resposta"></h3>
+      <h3 id="reply"></h3>
     </main>
   </body>
 </html>
